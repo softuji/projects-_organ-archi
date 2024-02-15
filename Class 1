@@ -1,0 +1,44 @@
+#A Lógica da Comparação e da Soma Aula 1
+BITS = 32
+def soma_logica(a:int, b:int):
+    va = binario(a)
+    vb = binario(b)
+    vem1 = False
+
+    for i in range(BITS):
+        aBit = True if va[i] else False
+        bBit = True if vb[i] else False
+        soma = aBit ^ bBit # XOR #operadores bitwise, usados para operações bit a bit em números inteiros
+        vai1 = aBit & bBit # AND
+        soma = soma ^ vem1 
+        vem1 = vai1 | ((aBit ^ bBit) & vem1) #OR
+        va[i] = 1 if soma else 0
+    return decimal(va)
+        
+def binario(dec:int, i=0):
+    vet = [0] * BITS #quantidade de BITS sendo preenchidas com 0/1
+    while dec > 0:
+        vet[i] = dec % 2
+        dec = (dec - vet[+i]) // 2
+        i += 1
+    return vet
+
+def decimal(vet, dec=0):
+    for i in range(BITS, 0, -1):
+        dec += vet[i-1] * 2**(i-1)
+    return dec
+
+a = int(input('Digite Valor de A: '))
+b = int(input('Digite Valor de B: '))
+print('Usando Operadores Tradicionais: ')
+if a == b:
+    print('\tA e B São Iguais.')
+else:
+    print('\tA e B São Diferentes.')
+print(f'A + B = {a + b}')
+print('Usando Operadores Lógicos: ')
+if not(a ^ b):
+    print('\tA e B São Iguais.')
+else:
+    print('\tA e B São Diferentes.')
+print(f'A + B = {soma_logica(a, b)}')
