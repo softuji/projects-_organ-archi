@@ -1,0 +1,44 @@
+//AULA 4
+#include<stdio.h>
+//Tentativa de entender 'classe' em C
+
+#define ADD 0
+#define SUB 1
+#define MUL 2
+#define DIV 3
+
+typedef struct {  /*evita chamada da função toda vez*/
+    float(*exec)(char ope, float op_a, float op_b); /*estrutura para encapsular um ponteiro de função simula uma classe*/
+} ULA;          /*estrutura chamada ULA com um ponteiro para função exec que recebe três argumentos (ope, op_a e op_b)*/
+
+float add(char ope, float op_a, float op_b) {  /*cada função é definida separadamente*/
+    return op_a + op_b;
+}
+
+float sub(char ope, float op_a, float op_b) {
+    return op_a - op_b;
+}
+
+float mul(char ope, float op_a, float op_b) {
+    return op_a * op_b;
+}
+
+float division(char ope, float op_a, float op_b) { 
+    if (op_b == 0) {
+        return -1;
+    }
+    return op_a / op_b;
+}
+
+int main(void) {
+    ULA oULA;
+    oULA.exec = &add;   /* ponteiro exec é atribuída à função correspondente a cada operação*/
+    printf("%.2f\n", oULA.exec(ADD, 10, 4));
+    oULA.exec = &sub;
+    printf("%.2f\n", oULA.exec(SUB, 10, 4));
+    oULA.exec = &mul;
+    printf("%.2f\n", oULA.exec(MUL, 10, 4));
+    oULA.exec = &division;
+    printf("%.2f\n", oULA.exec(DIV, 10, 4));    /*dificuldade de consertar casas decimais, fica ex: 2.500000("%f\n") ou 2.50("%.2f\n") -> resultado desejado 2.5*/
+    return 0;
+}
