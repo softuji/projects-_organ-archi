@@ -1,0 +1,24 @@
+#AULA3 - Fazer um programa para simular a Execução de Comandos Simples. 
+ADD = 0
+SUB = 1
+MUL = 2
+DIV = 3
+def cpu(ope, a, b):
+    if ope == ADD: #não importa caso troque ADD por 0
+        return a + b
+    elif ope == SUB:
+        return a - b
+    elif ope == MUL:
+        return a * b
+    elif ope == DIV:
+        if b == 0:
+            return -1
+        else:
+            return a / b
+    else:
+        return -2
+    
+print(cpu(ADD, 10, 4)) #o mesmo efeito ocorre aqui
+print(cpu(SUB, 10, 4))
+print(cpu(MUL, 10, 4))
+print(cpu(DIV, 10, 4))
