@@ -1,0 +1,40 @@
+#AULA 2 - Programa para Conversão de Decimal para Hexadecimal.
+#include <stdio.h>
+#include <string.h>
+
+//Retorna uma String com o conteúdo invertido ao do argumento
+void inv_str(char *sTexto) {
+    int inic = 0;
+    int fim = strlen(sTexto) - 1; //Rinetorna um valor inteiro representando o número de caracteres na string antes do caractere nulo de terminação ('\0').
+    char temp;
+    while (fim > inic) { //inverte a string até o meio
+        temp = sTexto[inic];
+        sTexto[inic] = sTexto[fim]; //caractere na posição inicio da string atribui o valor do caractere na posição fim
+        sTexto[fim] = temp;
+        inic++;
+        fim--;
+    }
+}
+int main() {
+    char *vHexas[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"}; //array de ponteiros para caracteres
+    printf("Programa para Conversão de Decimal para Hexadecimal.\n");
+    
+    int nDecimal;
+    printf("Digite um Número Decimal Inteiro: ");
+    scanf("%d", &nDecimal);
+    
+    char sHexadecimal[100]; // Aloca espaço suficiente para armazenamento
+    int i = 0;
+    while (nDecimal > 16) {
+        int nResto = nDecimal % 16;
+        nDecimal = (nDecimal - nResto) / 16;
+        sHexadecimal[i++] = *vHexas[nResto];
+    }
+    sHexadecimal[i++] = *vHexas[nDecimal];
+    sHexadecimal[i] = '\0'; //'\0' é necessário para garantir que a string tenha um final definido
+    inv_str(sHexadecimal);
+    
+    printf("O Valor em Hexadecimal é: 0x%s\n", sHexadecimal);
+    printf("Autor: Cássio D. B Pinheiro");
+    return 0;
+}
