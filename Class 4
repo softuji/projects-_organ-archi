@@ -31,14 +31,14 @@ float division(char ope, float op_a, float op_b) {
 }
 
 int main(void) {
-    ULA oULA;
+    ULA oULA; //oULA é uma struct do tipo ULA
     oULA.exec = &add;   /* ponteiro exec é atribuída à função correspondente a cada operação*/
-    printf("%.2f\n", oULA.exec(ADD, 10, 4));
+    printf("%g\n", oULA.exec(ADD, 10, 4));
     oULA.exec = &sub;
-    printf("%.2f\n", oULA.exec(SUB, 10, 4));
+    printf("%g\n", oULA.exec(SUB, 10, 4));
     oULA.exec = &mul;
-    printf("%.2f\n", oULA.exec(MUL, 10, 4));
+    printf("%g\n", oULA.exec(MUL, 10, 4));
     oULA.exec = &division;
-    printf("%.2f\n", oULA.exec(DIV, 10, 4));    /*dificuldade de consertar casas decimais, fica ex: 2.500000("%f\n") ou 2.50("%.2f\n") -> resultado desejado 2.5*/
+    printf("%g\n", oULA.exec(DIV, 10, 4)); 
     return 0;
 }
