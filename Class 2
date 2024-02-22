@@ -5,7 +5,7 @@
 //Retorna uma String com o conteúdo invertido ao do argumento
 void inv_str(char *sTexto) {
     int inic = 0;
-    int fim = strlen(sTexto) - 1; //Rinetorna um valor inteiro representando o número de caracteres na string antes do caractere nulo de terminação ('\0').
+    int fim = strlen(sTexto) - 1; //Retorna um valor inteiro representando o número de caracteres na string antes do caractere nulo de terminação ('\0').
     char temp;
     while (fim > inic) { //inverte a string até o meio
         temp = sTexto[inic];
