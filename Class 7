@@ -1,0 +1,44 @@
+/*Organização de Computadores
+Cássio Pinheiro
+Manipulando Dados em RAM
+Desafio: Acesso a Dados em RAM para configuração de 2x1024x16*/
+
+#include<stdio.h>
+
+#define READ 0
+#define WRITE 1
+#define TAMRAM 1024
+
+typedef struct {
+        int memoria [TAMRAM];
+}memRAM;
+
+void Memoria(memRAM *mem){
+    for( int i = 0; i < TAMRAM; i++ ) 
+        mem -> memoria[ i ] = 0;
+}
+int acesso(memRAM *mem, int modo, int mar, int mbr ){ 
+    if( modo == READ )
+        return mem -> memoria[ mar ];
+    else
+        mem -> memoria[ mar ] = mbr;
+        return( 0 );
+}
+int main(){
+    memRAM minhaRAM;
+    int mar, mbr;
+    
+    Memoria(&minhaRAM);
+    acesso(&minhaRAM, WRITE, 4, 245 );
+    acesso(&minhaRAM, WRITE, 11, 25 );
+    acesso(&minhaRAM, WRITE, 2, 45 );
+    acesso(&minhaRAM, WRITE, 31, 52 );
+    acesso(&minhaRAM, WRITE, 7, 10 );
+	mbr = acesso(&minhaRAM, READ, 31, 0);
+	printf("%d\n", mbr);
+	for( mar = 0; mar < 10; mar++ ) {
+		mbr = acesso(&minhaRAM, READ, mar, 0);
+		printf("%d\n", mbr);
+	}
+	return( 0 );
+}
