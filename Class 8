@@ -1,0 +1,22 @@
+#Fazer programa (funções para geração e teste) para implementar paridade par.
+def calcular_paridade_par(bits):
+    paridade = 0
+    for bit in bits:
+        paridade ^= bit #XOR
+    return paridade
+
+def verificar_paridade(bits):
+    paridade = calcular_paridade_par(bits)
+    if paridade == 0:
+        print("Paridade par: Verificação bem-sucedida")
+    else:
+        print("Paridade par: Falha na verificação -> é ímpar.")
+
+bits1 = [0, 1, 1, 0, 1]  #13
+bits2 = [0, 0, 0, 0, 0, 0, 0, 0] #0
+bits3 = [0, 1, 1, 1, 1, 1, 1, 1] #127
+bits4 = [1, 1, 0, 1, 0, 0, 0, 1] #209
+verificar_paridade(bits1)
+verificar_paridade(bits2)
+verificar_paridade(bits3)
+verificar_paridade(bits4)
