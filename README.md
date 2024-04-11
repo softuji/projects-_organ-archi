@@ -76,9 +76,9 @@ O programa implementa o conceito de paridade par, que é uma técnica comumente 
 Programação Funcional em Python: A utilização de iterações com for e a operação XOR (^) em Python torna o código mais conciso e legível.
 
 ### Class 9
-Tema: Na Simulação de ULA, Implementar geração de Flags para: Zero, Negativo e Overflow.
+Tema: Na Simulação de ULA, implementar geração de Flags para: Zero, Negativo e Overflow.
 
-O programa já havia implementação da Unidade Lógica Aritmética (ULA) simples capaz de realizar quatro operações básicas: adição, subtração, multiplicação e divisão. Então, houve a necessidade de Implementação de Flags com os seguintes entendimentos:
+O programa já havia a implementação da Unidade Lógica Aritmética (ULA) simples capaz de realizar quatro operações básicas: adição, subtração, multiplicação e divisão. Então, houve a necessidade de Implementação de Flags com os seguintes entendimentos:
 
 * Flag de negativo: Se o resultado da operação for menor que zero (resultado.resultado < 0), então a flag de negativo é definida como 1.
 Caso contrário, a flag de negativo é definida como 0.
