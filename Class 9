@@ -33,7 +33,7 @@ ResultadoULA execULA(char op, float op_a, float op_b) {
     } else if (op == DIV) {
         if (op_b == 0) {
             resultado.resultado = -1;
-            resultado.overflow = 1;
+            resultado.overflow = 0;
         } else {
             resultado.resultado = op_a / op_b;
         }
