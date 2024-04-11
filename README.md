@@ -61,7 +61,7 @@ Tema: Na linguagem de programação C, foi implementada em POO uma simulação d
 * A função Memoria inicializa toda a memória RAM com zeros, imitando o comportamento comum de inicialização da memória em sistemas computacionais.
 * A função acesso simula operações de leitura e escrita na memória RAM, onde os dados são acessados por meio de um endereço de memória (mar) e o dado a ser lido/escrito (mbr), com base no modo de operação especificado (READ/WRITE).
 
-Link para o projeto: https://www.jdoodle.com/ia/ZXU
+Link para o projeto: https://www.jdoodle.com/ia/101x
 
 ### Class 8
 Tema: Fazer programa (funções para geração e teste) para implementar paridade par.
@@ -71,8 +71,6 @@ O código fez uso das seguintes funções:
 * A função verificar_paridade testa se a paridade par de uma lista de bits é 0 (o que significa que é par) ou não.
 * O exemplo de uso demonstra como chamar a função verificar_paridade com uma lista de bits para verificar se a paridade é par ou não.
 
-Paridade Par em Sistemas de Comunicação e Armazenamento de Dados:
-
 O programa implementa o conceito de paridade par, que é uma técnica comumente usada em sistemas de comunicação e armazenamento de dados para detecção de erros. A paridade par é uma forma simples de verificação de erro, onde um bit adicional (bit de paridade) é adicionado a um conjunto de bits para garantir que o número total de bits 1 seja sempre par.
 
 Programação Funcional em Python: A utilização de iterações com for e a operação XOR (^) em Python torna o código mais conciso e legível.
@@ -80,5 +78,15 @@ Programação Funcional em Python: A utilização de iterações com for e a ope
 ### Class 9
 Tema: Na Simulação de ULA, Implementar geração de Flags para: Zero, Negativo e Overflow.
 
+O programa já havia implementação da Unidade Lógica Aritmética (ULA) simples capaz de realizar quatro operações básicas: adição, subtração, multiplicação e divisão. Então, houve a necessidade de Implementação de Flags com os seguintes entendimentos:
+
+* Flag de negativo: Se o resultado da operação for menor que zero (resultado.resultado < 0), então a flag de negativo é definida como 1.
+Caso contrário, a flag de negativo é definida como 0.
+
+* Flag de zero: Se o resultado da operação for igual a zero (resultado.resultado == 0), então a flag de zero é definida como 1.
+Caso contrário, a flag de zero é definida como 0.
+
+* Flag de overflow: Para a operação de adição, exige verificação se os operandos têm sinais iguais e o resultado tem sinal oposto, indicando que ocorreu um overflow. Para a operação de multiplicação, exige verificação se o quociente da divisão do resultado pelo primeiro operando é igual ao segundo operando, o que indica que ocorreu um overflow.
+Porém, não teve êxito na elaboração do código na parte de definir os comandos de overflow.
 
 Link para o projeto: https://www.jdoodle.com/ia/101u
